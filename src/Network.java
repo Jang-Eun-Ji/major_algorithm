@@ -21,7 +21,7 @@ public class Network {
             if(a == i){
                 a++;
             }
-            int b = 1;
+            int b = a + 1;
             if(b == i){
                 b++;
                 System.out.println("b"+b);
