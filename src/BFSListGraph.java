@@ -6,7 +6,7 @@ import java.util.Queue;
 public class BFSListGraph {
     static boolean[] visited;
     static List<List<Integer>> adjList;
-    static int distance;
+    static int[] distance;
     public static void main(String[] args) {
         int[][] inputArr = {{0, 1}, {0, 2}, {1, 3}, {2, 3}, {2, 4}};
         int node_n = 5;
@@ -18,7 +18,9 @@ public class BFSListGraph {
         for (int[] a : inputArr) {
             addEdge(a[0], a[1]);
         }
+
         System.out.println("adjList = " + adjList);
+        distance = new int[node_n];
         bfs(0);
     }
     static void bfs(int start){
@@ -26,11 +28,12 @@ public class BFSListGraph {
         visited[start] = true;
         queue.add(start);
         while(!queue.isEmpty()){
-            int next = queue.poll();
-            System.out.print(next+ " ");
+            int next = queue.poll(); //방문
+            System.out.print("next = "+ next+ " ");
             for(int target : adjList.get(next)){
                 if(visited[target] != true){
-                    queue.add(target);
+                    queue.add(target); //방문예정인 데이터를 큐에 담는것
+                    distance[target] = distance[next] + 1;
                     visited[target] = true;
                 }
             }

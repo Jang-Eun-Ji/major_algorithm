@@ -10,7 +10,6 @@ public class Network {
         int n = 3;
         int[][] computers = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
 
-        visited = new boolean[n];
         adjList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             adjList.add(new ArrayList<>());
@@ -24,29 +23,18 @@ public class Network {
             int b = a + 1;
             if(b == i){
                 b++;
-                System.out.println("b"+b);
             }
             addEdge(computers[i][a], computers[i][b]);
             System.out.println("kk"+ computers[i][a] + computers[i][b]);
         }
-        for (int[] a : computers) {
-            addEdge(a[1], a[2]);
-        }
-        System.out.println("adjList = " + adjList);
-//        for (int i = 0; i < adjList.size(); i++) {
-//            if (adjList.get(i).equals(new ArrayList<>())){
-//                adjList.remove(i);
-//            }
-//        }
-//        for (int i = 0; i < adjList.size(); i++) {
-//            count += adjList.get(i).size();
-//        }
-//        System.out.println("adjList = " + adjList);
-//        System.out.println(count);
-    }
+        System.out.println(count/2);
 
+
+    }
     static void addEdge(int a, int b) {
-        adjList.get(a).add(b);
-//        adjList.get(b).add(a); //양방향
+        count = count + a + b;
+        if(a == 0 && b == 0){
+            count = count + 2;
+        }
     }
 }
