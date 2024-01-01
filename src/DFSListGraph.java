@@ -14,10 +14,9 @@ public class DFSListGraph {
         for (int i = 0; i < node_n; i++) {
             adjList.add(new ArrayList<>());
         }
-        System.out.println(adjList);
+//        System.out.println(adjList);
         for (int[] a : inputArr) {
             addEdge(a[0], a[1]);
-            System.out.println("adjList" + adjList);
         }
         System.out.println("adjList = " + adjList);
 //        답: 0,1,3,2,4

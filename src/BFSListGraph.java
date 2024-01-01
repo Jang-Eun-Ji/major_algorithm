@@ -26,12 +26,12 @@ public class BFSListGraph {
     static void bfs(int start){
         Queue<Integer> queue = new LinkedList<>();
         visited[start] = true;
-        queue.add(start);
+        queue.add(start); //큐에 0을 담음
         while(!queue.isEmpty()){
-            int next = queue.poll(); //방문
+            int next = queue.poll(); // 방문 0을 출력 next임
             System.out.print("next = "+ next+ " ");
-            for(int target : adjList.get(next)){
-                if(visited[target] != true){
+            for(int target : adjList.get(next)){ //target - 0번째가 연결된 노드
+                if(!visited[target]){
                     queue.add(target); //방문예정인 데이터를 큐에 담는것
                     distance[target] = distance[next] + 1;
                     visited[target] = true;
