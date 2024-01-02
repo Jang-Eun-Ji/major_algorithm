@@ -27,5 +27,9 @@ public class BinarySearch {
             }
         }
     return -1;
+        //입국심사 문제 풀기
+        //구명보트 풀기
+        //정수삼각형
+        //3진법 뒤집기
     }
 }

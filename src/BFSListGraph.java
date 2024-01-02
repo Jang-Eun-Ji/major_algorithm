@@ -31,9 +31,10 @@ public class BFSListGraph {
             int next = queue.poll(); // 방문 0을 출력 next임
             System.out.print("next = "+ next+ " ");
             for(int target : adjList.get(next)){ //target - 0번째가 연결된 노드
-                if(!visited[target]){
+                if(!visited[target]){ //들리지 않은 노드 1,2
                     queue.add(target); //방문예정인 데이터를 큐에 담는것
-                    distance[target] = distance[next] + 1;
+                    System.out.println("target : "+target);
+//                    distance[target] = distance[next] + 1;
                     visited[target] = true;
                 }
             }
