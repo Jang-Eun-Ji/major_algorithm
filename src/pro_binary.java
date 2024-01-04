@@ -3,20 +3,31 @@ import java.util.Arrays;
 
 public class pro_binary {
     public static void main(String[] args) {
-        int n = 6;
+        int n = 7;
         int[] times = {7, 10};
-
-        int[] timeArr = new int[times[times.length -1] * n];
-        for (int i = 0; i < timeArr.length; i++) {
-            timeArr[i] = i;
-        }
+        Arrays.sort(times);
         int start = 0;
-        int end = timeArr.length - 1;
+        int end = times[times.length -1]*n;
         while (start <= end){
             int middle = (start + end)/2;
-            if(timeArr[middle] > )
+            int peopleNum = 0;
+            for (int i = 0; i < times.length; i++) {
+                peopleNum += middle/times[i];
+            }
+            if(peopleNum == n){
+                System.out.println(middle);
+                int temp = middle%times[0];
+                middle -= temp;
+                System.out.println(middle);
+                break;
+            }
+            if(peopleNum < n){
+                start = middle + 1;
+            }
+            if (peopleNum > n){
+                end = middle -1;
+            }
         }
-        if(timeArr )
     }
-    void
+
 }
