@@ -17,7 +17,7 @@ public class DFSArrayGraph {
     static void dfs(int start){
         visited[start] = true;
         for (int i = 0; i < static_graph[start].length; i++) {
-            if(!visited[i] && static_graph[start][i] == 1) {
+            if(!visited[i]&& static_graph[start][i] == 1){
                 System.out.println(i);
                 dfs(i);
             }

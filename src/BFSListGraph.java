@@ -18,7 +18,6 @@ public class BFSListGraph {
         for (int[] a : inputArr) {
             addEdge(a[0], a[1]);
         }
-
         System.out.println("adjList = " + adjList);
         distance = new int[node_n];
         bfs(0);
